@@ -220,7 +220,7 @@ function M:parseNodeDataForBase64(node, layer, data)
     for i = 1, tileSize do
         local start = (i - 1) * 4 + 1
         local a0, a1, a2, a3 = string.byte(decodedData, start, start + 3)
-        local gid = a3 * 256 * 3 + a2 * 256 * 2 + a1 * 256 + a0
+        local gid = a3 * 256 ^ 3 + a2 * 256 ^ 2 + a1 * 256 + a0
         layer.tiles[i] = gid
     end
 end
